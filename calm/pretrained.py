@@ -49,8 +49,9 @@ class CaLM:
             model_folder = os.path.join(os.path.dirname(__file__), 'calm_weights')
             weights_file = os.path.join(model_folder, 'calm_weights.ckpt')
             if not os.path.exists(weights_file):
+                print('Downloading model weights...')
                 os.makedirs(model_folder, exist_ok=True)
-                url = 'http://opig.stats.ox.ac.uk/website/data/downloads/calm-weights.ckpt'
+                url = 'http://opig.stats.ox.ac.uk/data/downloads/calm_weights.pkl'
                 with open(weights_file, 'wb') as handle:
                     handle.write(requests.get(url).content)
 
