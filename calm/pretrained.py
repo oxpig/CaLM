@@ -83,7 +83,7 @@ class CaLM:
         if average:
             return repr_.mean(axis=1)
         else:
-            return repr_.mean()
+            return repr_
 
     def embed_sequences(self, sequences: List[Union[str, CodonSequence]]) -> torch.Tensor:
         """Embeds a set of sequences using CaLM."""
