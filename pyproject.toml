@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "CaLM"
+version = "0.1.2"
+description = "CaLM: the Codon adaptation Language Model"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "BSD 3-clause license"}
+maintainers = [
+    {name = "Carlos Outeiral", email = "carlos@outeiral.net"},
+]
+dependencies = [
+    "numpy",
+    "requests",
+    "torch>=1.6",
+    "biopython",
+    "einops",
+    "rotary_embedding_torch",
+]
+
+[tool.setuptools.packages.find]
+include = ["calm", "calm.*"]
+
+[tool.setuptools]
+include-package-data = true
+
+[project.urls]
+Homepage = "https://github.com/oxpig/CaLM"
+"Bug Tracker" = "https://github.com/oxpig/CaLM/issues"
